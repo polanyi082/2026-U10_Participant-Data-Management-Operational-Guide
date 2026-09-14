@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026 U10 산업특강 · 학교 담당자 명단 정리 안내</title>
+<title>2026년 U10 AI활용 직무역량강화특강_운영 가이드</title>
 <style>
   :root {
     --paper: #F2F4F7;
@@ -115,7 +115,7 @@
   /* ── 요약 정보 ──────────────────────────── */
   .facts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2px;
     background: var(--line);
     border: 1px solid var(--line);
@@ -423,6 +423,161 @@
     gap: 6px 18px;
   }
 
+  /* ── 바로가기 링크 ───────────────────────── */
+  .links {
+    margin: 14px 0 0 17px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: color-mix(in srgb, var(--navy) 5%, var(--card));
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .link small {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: var(--ink-faint);
+  }
+
+  .link strong { font-size: 16.5px; }
+  .link em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--navy-bright); }
+  .link:hover { border-color: var(--navy-bright); }
+  .link:focus-visible { outline: 2px solid var(--navy-bright); outline-offset: 3px; }
+
+  .split {
+    margin: 14px 0 0 17px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .split > div {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 16px 18px;
+  }
+
+  .split b { display: block; font-size: 15.5px; margin-bottom: 4px; }
+  .split span { display: block; font-size: 14.5px; color: var(--ink-soft); }
+
+  /* ── 안내 시점 ──────────────────────────── */
+  .steps {
+    margin: 14px 0 0 17px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 2px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .steps li { background: var(--card); padding: 16px 18px; }
+  .steps small { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; color: var(--navy); }
+  .steps strong { display: block; font-size: 17px; margin-top: 2px; }
+  .steps span { display: block; font-size: 13.5px; color: var(--ink-soft); }
+
+  .duties {
+    margin: 12px 0 0;
+    padding-left: 34px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4px 28px;
+    color: var(--ink-soft);
+    font-size: 15.5px;
+  }
+
+  /* ── 복습 영상 일정표 ───────────────────── */
+  .gantt-scroll {
+    margin: 16px 0 0 17px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 18px 18px 12px;
+  }
+
+  .gantt { min-width: 660px; display: grid; gap: 10px; }
+
+  .g-row {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+  }
+
+  .g-label { font-size: 14px; font-weight: 700; line-height: 1.35; }
+  .g-label span { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+  .g-track {
+    position: relative;
+    height: 22px;
+    background:
+      linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 100% 100% no-repeat,
+      color-mix(in srgb, var(--line) 30%, transparent);
+    border-radius: 2px;
+  }
+
+  .g-bar { position: absolute; top: 3px; bottom: 3px; border-radius: 2px; }
+  .g-live   { background: var(--navy); }
+  .g-replay { background: linear-gradient(90deg, transparent, var(--navy-bright) 14%); }
+  .g-recruit {
+    background: repeating-linear-gradient(90deg, var(--signal) 0 7px, transparent 7px 11px);
+  }
+  .g-extra  { background: var(--navy-bright); }
+  .g-report { background: var(--ink-faint); }
+
+  .g-axis { position: relative; height: 34px; }
+  .g-tick {
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    padding-top: 8px;
+    border-left: 1px solid var(--line);
+  }
+  .g-tick::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 6px;
+    border-left: 1px solid var(--ink-faint);
+  }
+  .g-tick { border-left: 0; }
+  .g-tick.first { transform: none; }
+  .g-tick.first::before { left: 0; }
+  .g-tick.last { transform: translateX(-100%); }
+  .g-tick.last::before { left: auto; right: 0; }
+
+  .opinion {
+    margin: 18px 0 0 17px;
+    border: 1px solid color-mix(in srgb, var(--navy-bright) 45%, transparent);
+    background: color-mix(in srgb, var(--navy-bright) 7%, var(--card));
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+
+  .opinion b { display: block; font-size: 16px; margin-bottom: 6px; }
+  .opinion ul { margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 15px; }
+  .opinion li + li { margin-top: 2px; }
+
   @media print {
     body { background: #fff; }
     .toc { display: none; }
@@ -434,11 +589,10 @@
 <div class="wrap">
   <header>
     <p class="eyebrow">학교 담당자 안내</p>
-    <h1>2026년 U10 AI활용<br>직무역량강화특강<br>참여자 · 수료자 명단 정리 안내</h1>
+    <h1>2026년 U10 AI활용<br>직무역량강화특강_운영 가이드</h1>
     <p class="lead">
-      학교별 구글 스프레드시트를 공유드렸습니다. 신청자 인원과 수료자 인원이 어떤 기준으로,
-      어느 시트에서 집계되는지 정리했습니다. 담당자님께서 확인하실 항목과 요청드리는 사항을
-      순서대로 담았습니다.
+      구글 시트가 중간에 변경 · 추가되면서 혼란스러우셨을 듯합니다. 신청 경로와 시트 용도,
+      신청자 · 수료자 집계 기준, 특강 안내 방식, 복습 동영상 일정까지 한 페이지로 정리했습니다.
     </p>
   </header>
 
@@ -447,7 +601,7 @@
   <dl class="facts">
     <div class="fact">
       <dt>운영 과정</dt>
-      <dd>10개 과정<small>산업·직무별 편성</small></dd>
+      <dd>10개 과정<small>과정별 오픈채팅방 운영</small></dd>
     </div>
     <div class="fact">
       <dt>과정당 운영시간</dt>
@@ -461,32 +615,80 @@
       <dt>출석 확인</dt>
       <dd>이중 확인<small>구글폼(1차) + Zoom 로그(2차)</small></dd>
     </div>
+    <div class="fact">
+      <dt>복습 동영상</dt>
+      <dd>~ 11/13(금)<small>운영안 의견 취합 중</small></dd>
+    </div>
   </dl>
 
   <div class="layout">
     <nav class="toc" aria-label="목차">
       <p class="toc-title">목차</p>
-      <a href="#s1"><b>01</b>프로그램 개요</a>
-      <a href="#s2"><b>02</b>공유 스프레드시트 구성</a>
-      <a href="#s3"><b>03</b>신청자 인원 확인</a>
-      <a href="#s4"><b>04</b>수료자 판정 기준</a>
-      <a href="#s5"><b>05</b>담당자 요청사항</a>
-      <a href="#s6"><b>06</b>시트 사용 팁</a>
-      <a href="#s7"><b>07</b>자주 묻는 질문</a>
+      <a href="#links"><b>01</b>신청 경로와 시트 정리</a>
+      <a href="#overview"><b>02</b>프로그램 개요</a>
+      <a href="#sheets"><b>03</b>학교별 공유 시트 구성</a>
+      <a href="#count"><b>04</b>신청자 인원 확인</a>
+      <a href="#complete"><b>05</b>수료자 판정 기준</a>
+      <a href="#notice"><b>06</b>특강 안내 · 오픈채팅방</a>
+      <a href="#replay"><b>07</b>복습 동영상 일정 (의견 요청)</a>
+      <a href="#request"><b>08</b>담당자 요청사항</a>
+      <a href="#tips"><b>09</b>시트 사용 팁</a>
+      <a href="#faq"><b>10</b>자주 묻는 질문</a>
     </nav>
 
     <div class="sections">
 
-      <!-- 01 ─────────────────────────────── -->
-      <section id="s1">
+      <!-- 신청 경로와 시트 정리 ───────────────── -->
+      <section id="links">
         <span class="tag">01</span>
+        <h2>신청 경로와 시트 정리</h2>
+        <div class="points">
+          <div>
+            <h3>학생 참여신청 — 두 가지 경로</h3>
+            <p>학생 신청은 아래 두 곳으로 접수됩니다. 두 경로의 신청 내역은 전체현황으로 모아 집계합니다.</p>
+            <div class="links">
+              <a class="link" href="https://docs.google.com/spreadsheets/d/1_dd_X-qrzbnVJcN15U8ymyqB4UzpmQK0iaKJWr2zZHE/edit?usp=sharing" target="_blank" rel="noopener">
+                <small>수기 작성</small>
+                <strong>학교별 취합명단</strong>
+                <em>구글 시트 열기 ↗</em>
+              </a>
+              <a class="link" href="https://forms.gle/tVMnMrab3oeZ537t7" target="_blank" rel="noopener">
+                <small>학생 직접 신청</small>
+                <strong>구글 설문폼</strong>
+                <em>신청 폼 열기 ↗</em>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h3>시트별 용도 한눈에</h3>
+            <div class="split">
+              <div>
+                <b>신청 받기</b>
+                <span>학교별 취합명단(수기) · 구글 설문폼 — 참여신청 접수용</span>
+              </div>
+              <div>
+                <b>결과 확인</b>
+                <span>담당자별 이메일로 공유드린 학교별 시트 — 본교 신청자 · 수료자 정보 확인용</span>
+              </div>
+            </div>
+            <div class="note">
+              신청 추가 · 수정은 <strong>신청 경로(취합명단 · 설문폼)</strong>에서 해 주세요.
+              이메일로 공유드린 학교별 시트는 신청 내역이 자동 연동되는 <strong>결과 확인용</strong>입니다.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 프로그램 개요 ────────────────────────── -->
+      <section id="overview">
+        <span class="tag">02</span>
         <h2>프로그램 개요</h2>
         <div class="points">
           <div>
             <h3>운영 방식</h3>
             <p>
               전 과정 Zoom 비대면으로 진행합니다. 과정별로 <strong>줌 접속링크가 다릅니다.</strong>
-              학생분들께 과정별 링크를 정확히 안내해 주시기 바랍니다.
+              접속링크는 참여자 명단 확정 후 신청 학생에게 문자와 과정별 오픈채팅방으로 직접 안내드립니다.
             </p>
             <div class="note">
               연이어 두 과정에 참여하는 학생의 경우, 앞 과정 종료 후 <strong>새 링크로 재접속</strong>해야
@@ -540,16 +742,16 @@
         </div>
       </section>
 
-      <!-- 02 ─────────────────────────────── -->
-      <section id="s2">
-        <span class="tag">02</span>
-        <h2>공유드린 스프레드시트 구성</h2>
+      <!-- 학교별 공유 시트 구성 ────────────────── -->
+      <section id="sheets">
+        <span class="tag">03</span>
+        <h2>학교별 공유 시트 구성</h2>
         <div class="points">
           <div>
-            <h3>파일명과 접근 권한</h3>
+            <h3>파일명과 공유 방식</h3>
             <p>
               <code>2026년 U10산업특강 신청자/수료자 명단_○○대학교</code> 형식으로 학교별 파일을
-              각각 공유드렸습니다. 링크를 받으신 분은 <strong>편집자</strong> 권한으로 접근 가능합니다.
+              만들어 <strong>학교 담당자별 이메일로 공유</strong>드렸습니다.
             </p>
             <p>
               각 시트 상단 <strong>C4 셀</strong>에 학교명이 표기되어 있습니다. 열어보신 파일이
@@ -611,9 +813,9 @@
         </div>
       </section>
 
-      <!-- 03 ─────────────────────────────── -->
-      <section id="s3">
-        <span class="tag">03</span>
+      <!-- 신청자 인원 확인 ────────────────────── -->
+      <section id="count">
+        <span class="tag">04</span>
         <h2>참여신청자 인원 확인</h2>
         <div class="points">
           <div>
@@ -635,7 +837,7 @@
             </p>
             <p>
               특정 과정만 보시려면 <strong>과정별_(1)~(10)</strong> 시트를 열거나, 출석 시트에서
-              <strong>필터 보기</strong>를 사용해 주세요. (사용법은 06번 항목 참고)
+              <strong>필터 보기</strong>를 사용해 주세요. (09 시트 사용 팁 참고)
             </p>
           </div>
           <div>
@@ -649,9 +851,9 @@
         </div>
       </section>
 
-      <!-- 04 ─────────────────────────────── -->
-      <section id="s4">
-        <span class="tag">04</span>
+      <!-- 수료자 판정 기준 ────────────────────── -->
+      <section id="complete">
+        <span class="tag">05</span>
         <h2>수료자 판정 기준</h2>
         <div class="points">
           <div>
@@ -697,29 +899,160 @@
         </div>
       </section>
 
-      <!-- 05 ─────────────────────────────── -->
-      <section id="s5">
-        <span class="tag">05</span>
+      <!-- 특강 안내 · 오픈채팅방 ──────────────── -->
+      <section id="notice">
+        <span class="tag">06</span>
+        <h2>특강 참여 안내 및 과정별 오픈채팅방 운영</h2>
+        <div class="points">
+          <div>
+            <h3>참여자 사전 안내</h3>
+            <p>
+              과정별 참여자 명단이 확정되면, 신청자에게 <strong>ZOOM 접속링크</strong>와
+              <strong>해당 과정 오픈채팅방 입장링크</strong>를 문자로 발송합니다.
+              이후 주요 안내사항은 <strong>문자와 오픈채팅방으로 중복 안내</strong>합니다.
+            </p>
+          </div>
+          <div>
+            <h3>특강 안내 시점 (과정마다 3회)</h3>
+            <ol class="steps">
+              <li><small>1차</small><strong>특강 1일 전</strong><span>접속링크 · 채팅방 재안내</span></li>
+              <li><small>2차</small><strong>특강 당일 오전</strong><span>당일 일정 리마인드</span></li>
+              <li><small>3차</small><strong>시작 1시간 전</strong><span>16:30경 · 입장 준비 안내</span></li>
+            </ol>
+          </div>
+          <div>
+            <h3>과정별 오픈채팅방에서 안내하는 내용</h3>
+            <ul class="duties">
+              <li>ZOOM 접속 URL 및 ID/PW</li>
+              <li>특강 시작시간 · 쉬는시간 등 실시간 운영</li>
+              <li>수업 중 공지 및 변경사항</li>
+              <li>만족도 조사 및 설문 링크</li>
+              <li>LMS 복습영상 업로드 및 이용 방법</li>
+              <li>수료기준 및 수료증 발급</li>
+              <li>기타 과정별 후속 안내</li>
+            </ul>
+            <div class="note">
+              10개 과정마다 참여자가 다르기 때문에 <strong>과정별로 오픈채팅방을 각각 운영</strong>하여
+              참여자 안내와 후속 관리를 진행합니다.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 복습 동영상 일정 ────────────────────── -->
+      <section id="replay">
+        <span class="tag">07</span>
+        <h2>복습 동영상 제공 일정 — 의견 취합</h2>
+        <div class="points">
+          <div>
+            <h3>배경</h3>
+            <p>
+              과반수 이상의 대학에서 <strong>수료자 외 추가 신청자에게도 복습 동영상 제공</strong>을
+              희망하셔서, 제공 시점과 운영기간에 대한 의견을 모으고자 합니다.
+            </p>
+            <p>
+              운영업체 확인 결과 복습 동영상은 <strong>각 과정 종료 후 며칠 내 제공</strong>이 가능하며,
+              기본 제공기간은 1개월이나 실무담당자 간 협의한 일정에 맞춰 조정할 수 있습니다.
+            </p>
+          </div>
+          <div>
+            <h3>운영안</h3>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th>대상</th><th>제공 시점</th><th>이용 기간</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>① 실시간 특강 참여자</td>
+                    <td>각 과정 종료 후 동영상 제공이 가능한 시점부터<br>(특강 직후 바로 복습 희망 고려)</td>
+                    <td>~ 11/13(금)</td>
+                  </tr>
+                  <tr>
+                    <td>② 추가 신청자</td>
+                    <td>전체 실시간 특강 종료 후 10/2(금) 이후 별도 모집</td>
+                    <td>10/19(월) ~ 11/13(금)<br>약 4주</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="gantt-scroll" role="img" aria-label="9월 14일부터 11월 30일까지 복습 동영상 운영 일정표">
+              <div class="gantt">
+                <div class="g-row">
+                  <div class="g-label">실시간 ZOOM 특강<span>9/14(월) ~ 10/2(금)</span></div>
+                  <div class="g-track"><div class="g-bar g-live" style="left:0%;width:23.38%"></div></div>
+                </div>
+                <div class="g-row">
+                  <div class="g-label">① 참여자 복습<span>과정 종료 후 ~ 11/13(금)</span></div>
+                  <div class="g-track"><div class="g-bar g-replay" style="left:3.9%;width:74.02%"></div></div>
+                </div>
+                <div class="g-row">
+                  <div class="g-label">② 추가 신청 모집<span>10/2(금) 이후</span></div>
+                  <div class="g-track"><div class="g-bar g-recruit" style="left:24.68%;width:20.77%"></div></div>
+                </div>
+                <div class="g-row">
+                  <div class="g-label">② 추가 신청자 복습<span>10/19(월) ~ 11/13(금)</span></div>
+                  <div class="g-track"><div class="g-bar g-extra" style="left:45.45%;width:32.47%"></div></div>
+                </div>
+                <div class="g-row">
+                  <div class="g-label">결과 보고<span>11/13 이후 약 2주 · 11월 말</span></div>
+                  <div class="g-track"><div class="g-bar g-report" style="left:79.22%;width:20.78%"></div></div>
+                </div>
+                <div class="g-row">
+                  <div></div>
+                  <div class="g-axis">
+                    <span class="g-tick first" style="left:0%">9/14</span>
+                    <span class="g-tick" style="left:23.38%">10/2</span>
+                    <span class="g-tick" style="left:45.45%">10/19</span>
+                    <span class="g-tick" style="left:77.92%">11/13</span>
+                    <span class="g-tick last" style="left:100%">11/30</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="note">
+              추가 신청은 <strong>실시간 ZOOM 특강 참여자의 이탈을 최소화</strong>하기 위해 전체 특강
+              종료 후 진행하는 방향으로 검토하고 있습니다. 또한 11월 말까지 결과보고를 마무리해야 하므로,
+              <strong>11/13(금) 온라인 과정 종료 후 약 2주의 결과 보고 기간</strong>을 확보하고자 합니다.
+            </div>
+
+            <div class="opinion">
+              <b>각 대학의 의견을 부탁드립니다</b>
+              <ul>
+                <li>위 운영안(제공 시점 · 이용 기간)에 대한 의견</li>
+                <li>필요한 경우 제공기간을 조금 더 단축하는 것도 가능합니다</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 담당자 요청사항 ─────────────────────── -->
+      <section id="request">
+        <span class="tag">08</span>
         <h2>담당자님께 요청드립니다</h2>
         <ol class="checklist">
           <li>
-            <b>추가 신청자는 ‘삽입’ 하지 마시고 맨 아래에 이어서 기입</b>
+            <b>신청 추가 · 수정은 학교별 취합명단(수기)에서</b>
             <p>
-              중간에 행을 삽입하면 과정별 시트와 대시보드의 참조가 어긋납니다. 반드시 데이터
-              마지막 행 아래에 이어서 입력해 주세요.
+              이메일로 공유드린 학교별 시트는 자동 연동되는 결과 확인용입니다. 신청 내역 변경은
+              <strong>학교별 취합명단</strong> 또는 <strong>구글 설문폼</strong>으로 해 주세요.
             </p>
           </li>
           <li>
-            <b>과정명은 반드시 드롭다운 목록에서 선택</b>
+            <b>취합명단에 추가할 때는 ‘삽입’ 하지 마시고 맨 아래에 이어서 기입</b>
             <p>
-              직접 입력한 과정명은 집계에서 누락됩니다. 목록에 없는 값을 넣으면 경고 메시지가 표시됩니다.
+              중간에 행을 삽입하면 연동된 과정별 시트와 대시보드의 참조가 어긋납니다. 과정명은
+              10개 과정 명칭 그대로 기입해 주세요.
             </p>
           </li>
           <li>
             <b>학생에게 Zoom 입장 시 ‘본명’ 사용 안내</b>
             <p>
-              출석 누락의 가장 큰 원인입니다. 과정 안내 시 “Zoom 이름을 실명으로 변경 후 입장”을
-              함께 공지해 주시면 수료 확인이 훨씬 정확해집니다.
+              출석 누락의 가장 큰 원인입니다. 문자 · 오픈채팅방에서도 안내드리지만, 학교 공지 시
+              “Zoom 이름을 실명으로 변경 후 입장”을 함께 알려 주시면 수료 확인이 훨씬 정확해집니다.
             </p>
           </li>
           <li>
@@ -730,25 +1063,30 @@
             </p>
           </li>
           <li>
+            <b>복습 동영상 운영안 의견 회신</b>
+            <p>
+              07 항목의 제공 시점 · 이용 기간(단축 여부 포함)에 대한 본교 의견을 알려 주세요.
+            </p>
+          </li>
+          <li>
             <b>개인정보 취급 주의</b>
             <p>
-              시트에 연락처·이메일·학번이 포함되어 있습니다. 링크를 아시는 분은 편집이 가능하므로,
-              교내 업무 담당자 외 공유는 삼가 주시기 바랍니다.
+              시트에 연락처·이메일·학번이 포함되어 있습니다. 교내 업무 담당자 외 공유는 삼가 주시기 바랍니다.
             </p>
           </li>
         </ol>
       </section>
 
-      <!-- 06 ─────────────────────────────── -->
-      <section id="s6">
-        <span class="tag">06</span>
+      <!-- 시트 사용 팁 ────────────────────────── -->
+      <section id="tips">
+        <span class="tag">09</span>
         <h2>시트 사용 팁 — 필터는 ‘필터 보기’로</h2>
         <div class="points">
           <div>
             <h3>왜 ‘필터 보기’인가</h3>
             <p>
               <strong>[데이터] - [필터 만들기]</strong>는 시트에 접속한 <strong>모든 사람에게 동시에
-              적용</strong>됩니다. 담당자님이 필터를 걸어두면 다른 학교 담당자나 운영팀의 화면도 함께
+              적용</strong>됩니다. 담당자님이 필터를 걸어두면 다른 담당자나 운영팀의 화면도 함께
               바뀝니다.
             </p>
             <p>
@@ -772,11 +1110,25 @@
         </div>
       </section>
 
-      <!-- 07 ─────────────────────────────── -->
-      <section id="s7">
-        <span class="tag">07</span>
+      <!-- 자주 묻는 질문 ──────────────────────── -->
+      <section id="faq">
+        <span class="tag">10</span>
         <h2>자주 묻는 질문</h2>
         <div class="points">
+          <div>
+            <h3>시트가 여러 개라 어디에 입력해야 할지 모르겠습니다.</h3>
+            <p>
+              <strong>입력은 신청 경로</strong>(학교별 취합명단 · 구글 설문폼), <strong>확인은 이메일로
+              공유드린 학교별 시트</strong>입니다. 01 항목의 두 링크만 기억해 주시면 됩니다.
+            </p>
+          </div>
+          <div>
+            <h3>특강을 놓친 학생도 복습 동영상을 볼 수 있나요?</h3>
+            <p>
+              현재 운영안은 전체 실시간 특강 종료 후 <strong>10/2(금) 이후 추가 신청자를 별도 모집</strong>해
+              10/19(월) ~ 11/13(금) 동안 제공하는 방식입니다. 최종 일정은 각 대학 의견 취합 후 확정합니다.
+            </p>
+          </div>
           <div>
             <h3>신청자 수는 맞는데 수료자가 모두 0으로 나옵니다.</h3>
             <p>
@@ -822,8 +1174,9 @@
   <div class="closing">
     <h2>문의</h2>
     <p>
-      명단·수료 기준·시트 사용 관련 문의는 언제든 연락 주시기 바랍니다. 프로그램 종료 후에는
-      학교별 · 과정별 참여자 명단과 접속시간을 정리하여 결과보고서와 원자료를 함께 전달드리겠습니다.
+      명단 · 수료 기준 · 시트 사용 · 복습 동영상 운영안 관련 문의와 의견은 언제든 연락 주시기 바랍니다.
+      프로그램 종료 후에는 학교별 · 과정별 참여자 명단과 접속시간을 정리하여 결과보고서와 원자료를 함께
+      전달드리겠습니다.
     </p>
     <div class="flow">
       <span>황보식 차장 · 010-9044-9813</span>
@@ -833,7 +1186,7 @@
 
   <footer>
     <span>2026년 U10 AI활용 직무역량강화특강</span>
-    <span>학교 담당자용 명단 정리 안내</span>
+    <span>학교 담당자용 운영 가이드</span>
   </footer>
 </div>
 </body>
